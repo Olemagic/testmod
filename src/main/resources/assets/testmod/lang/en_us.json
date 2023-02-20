@@ -1,5 +1,9 @@
-    {
+{
     "itemGroup.ruby": "Ruby",
+    "itemGroup.other": "Other",
 
-    "item.testmod.ruby": "Ruby"
-} 
+    "item.testmod.ruby": "Ruby",
+    "item.testmod.mango": "Mango",
+    "item.testmod.coke": "Coke Coal",
+    "item.testmod.teleport_staff": "Teleport Staff"
+}
