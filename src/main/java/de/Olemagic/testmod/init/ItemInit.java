@@ -3,6 +3,7 @@ package de.Olemagic.testmod.init;
 import de.Olemagic.testmod.TestmodMain;
 import de.Olemagic.testmod.items.Dirtwand;
 import de.Olemagic.testmod.items.FuelItem;
+import de.Olemagic.testmod.items.Poisonwand;
 import de.Olemagic.testmod.items.TeleportStaff;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -42,6 +43,11 @@ public class ItemInit {
     //Register Dirt Wand
     public static final RegistryObject<Item> DIRT_WAND = ITEMS.register("dirt_wand",
             () -> new Dirtwand(new Item.Properties().tab(OtherCreativeTab.other)
+                    .durability(100)));
+
+    //Register Poison Wand
+    public static final RegistryObject<Item> POISON_WAND = ITEMS.register("poison_wand",
+            () -> new Poisonwand(new Item.Properties().tab(OtherCreativeTab.other)
                     .durability(100)));
 
     //Create creative tab for ruby-related items

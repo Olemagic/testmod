@@ -26,9 +26,9 @@ public class TeleportStaff extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         //get where player is looking and teleport them there
-        BlockHitResult ray = rayTrace(world, player, ClipContext.Fluid.NONE);
+        BlockHitResult ray = rayTrace(level, player, ClipContext.Fluid.NONE);
         BlockPos lookPos = ray.getBlockPos().relative(ray.getDirection());
         player.setPos(lookPos.getX(), lookPos.getY(), lookPos.getZ());
 
@@ -39,16 +39,16 @@ public class TeleportStaff extends Item {
         player.fallDistance = 0F;
 
         //Plays sound on teleport
-        world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
+        level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
 
         //Reduce durability on use
-        ItemStack stack = player.getItemInHand(hand);
+        ItemStack stack = player.getItemInHand(interactionHand);
         stack.setDamageValue(stack.getDamageValue() + 1);
 
         //Break item if durability is 0
         if (stack.getDamageValue() >= stack.getMaxDamage()) stack.setCount(0);
 
-        return super.use(world, player, hand);
+        return super.use(level, player, interactionHand);
     }
 
     protected static BlockHitResult rayTrace(Level world, Player player, ClipContext.Fluid fluidMode) {

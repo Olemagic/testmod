@@ -6,5 +6,6 @@
     "item.testmod.mango": "Mango",
     "item.testmod.coke": "Coke Coal",
     "item.testmod.teleport_staff": "Teleport Staff",
-    "item.testmod.dirt_wand": "Dirt Wand"
+    "item.testmod.dirt_wand": "Dirt Wand",
+    "item.testmod.poison_wand": "Poison Wand"
 }
