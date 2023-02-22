@@ -1,6 +1,7 @@
 package de.Olemagic.testmod.init;
 
 import de.Olemagic.testmod.TestmodMain;
+import de.Olemagic.testmod.items.Dirtwand;
 import de.Olemagic.testmod.items.FuelItem;
 import de.Olemagic.testmod.items.TeleportStaff;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -38,6 +39,12 @@ public class ItemInit {
             () -> new TeleportStaff(new Item.Properties().tab(OtherCreativeTab.other)
                     .durability(100)));
 
+    //Register Dirt Wand
+    public static final RegistryObject<Item> DIRT_WAND = ITEMS.register("dirt_wand",
+            () -> new Dirtwand(new Item.Properties().tab(OtherCreativeTab.other)
+                    .durability(100)));
+
+    //Create creative tab for ruby-related items
     public static class RubyCreativeTab extends CreativeModeTab {
         private RubyCreativeTab(int index, String label) {
             super(index, label);
@@ -53,6 +60,7 @@ public class ItemInit {
 
     }
 
+    //Create creative tab for other items
     public static class OtherCreativeTab extends CreativeModeTab {
         private OtherCreativeTab(int index, String label) {
             super(index, label);
